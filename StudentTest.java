@@ -31,14 +31,32 @@ public class StudentTest {
 		Student secondStudent = new Student("x", "Y", 3);
 		
 		int actual = secondStudent.compareTo(firstStudent);
-		int expected = 1;
 		
-		assertEquals(expected, actual);
+		// should be bigger then 0
+		boolean result = false;
+		
+		// No curly braces, you intend for the if statement not to be modified.
+		if (actual > 0)
+			result = true;
+		
+		assertTrue(result);
 		
 		Student student = new Student("x", "Y", 5);
 		
-		expected = -1;
+		
+		result = false;
+		
 		actual = secondStudent.compareTo(student);
+		if(actual < 0)
+			result = true;
+		assertTrue(true);
+		
+		// should be the same, therefore should be 0
+		result = false;
+		
+		Student studentSame = new Student("x", "Y", 3);
+		actual = secondStudent.compareTo(studentSame);
+		int expected = 0;
 		assertEquals(expected, actual);
 
 	}
@@ -53,5 +71,4 @@ public class StudentTest {
 		Integer actual = s.getRating();
 		assertEquals(expected, actual);
 	}
-
 }
