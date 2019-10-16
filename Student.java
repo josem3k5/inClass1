@@ -12,33 +12,18 @@ public class Student extends Person implements Comparable<Student>{
 		
 	}
 	
-	
-
-
-	
-
 	public Student(String firstName, String lastName, Integer rating) throws NameException {
 		super(firstName, lastName);
 		this.rating = rating;
 	}
-
-
-
-
-
 
 	@Override
 	public int compareTo(Student o) {
 		return rating - o.getRating();
 	}
 
-
-
-
 	public Integer getRating() {
 		
 		return new Integer(rating);
 	}
-	
-
 }
