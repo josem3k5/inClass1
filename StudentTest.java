@@ -26,39 +26,17 @@ public class StudentTest {
 	}
 
 	@Test
-	public void testCompareTo() throws NameException {
-		Student firstStudent = new Student("x", "Y", 2);
-		Student secondStudent = new Student("x", "Y", 3);
+	public void testCompare() throws NameException {
+		Student firstStudent = new Student("A", "B", 2);
+		Student secondStudent = new Student("A", "C", 3);
+		Student student = new Student("A", "A", 5);
+		Student empty = new Student("Z", "", 3);
+		Student secondEmpty = new Student("x","", 3);
 		
-		int actual = secondStudent.compareTo(firstStudent);
+		CompareLastFirstName clfn = new CompareLastFirstName();
 		
-		// should be bigger then 0
-		boolean result = false;
+		clfn.compare(firstStudent, secondStudent);
 		
-		// No curly braces, you intend for the if statement not to be modified.
-		if (actual > 0)
-			result = true;
-		
-		assertTrue(result);
-		
-		Student student = new Student("x", "Y", 5);
-		
-		
-		result = false;
-		
-		actual = secondStudent.compareTo(student);
-		if(actual < 0)
-			result = true;
-		assertTrue(true);
-		
-		// should be the same, therefore should be 0
-		result = false;
-		
-		Student studentSame = new Student("x", "Y", 3);
-		actual = secondStudent.compareTo(studentSame);
-		int expected = 0;
-		assertEquals(expected, actual);
-
 	}
 	
 	@Test
